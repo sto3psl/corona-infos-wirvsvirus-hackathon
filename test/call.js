@@ -35,7 +35,6 @@ async function call () {
     }).text()
 
     $ = cheerio.load(response)
-    console.log($('Say').text())
   }
 }
 
