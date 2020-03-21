@@ -11,11 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ibm-watson": "5.4.0",
     "twilio": "3.41.1"
   },
   "devDependencies": {
     "@now/node": "1.4.1",
     "cheerio": "1.0.0-rc.3",
+    "dotenv": "8.2.0",
     "got": "10.6.0",
     "nodemon": "2.0.2",
     "now": "17.0.4",
