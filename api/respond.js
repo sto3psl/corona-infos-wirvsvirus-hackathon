@@ -1,11 +1,30 @@
 const twilio = require('twilio')
 const { voiceConfig } = require('./_utils/config')
 const answersDE = require('./_utils/answers_de.json')
+const { assistant } = require('./_utils/watson')
 
 const { VoiceResponse } = twilio.twiml
 
 async function getIntentFromInput (input) {
-  return 'ErkrankungenLänder'
+  const session = await assistant.createSession({
+    assistantId: process.env.WATSON_ASSISTANT_ID
+  })
+
+  const message = await assistant.message({
+    assistantId: process.env.WATSON_ASSISTANT_ID,
+    sessionId: session.result.session_id,
+    input: {
+      message_type: 'text',
+      text: input
+    }
+  })
+
+  await assistant.deleteSession({
+    assistantId: process.env.WATSON_ASSISTANT_ID,
+    sessionId: session.result.session_id
+  })
+
+  return  message.result.output.intents[0].intent
 }
 
 /**
