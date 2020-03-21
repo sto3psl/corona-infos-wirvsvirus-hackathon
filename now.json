@@ -1,5 +1,15 @@
 {
   "version": 2,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Method": "*",
+        "Access-Control-Allow-Headers": "*"
+      }
+    }
+  ],
   "env": {
     "WATSON_ASSISTANT_APIKEY": "@watson-assistant-api-key",
     "WATSON_ASSISTANT_URL": "@watson-assistant-url",

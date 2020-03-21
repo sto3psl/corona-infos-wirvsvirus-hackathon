@@ -8,6 +8,12 @@ const { VoiceResponse } = twilio.twiml
  * @param {import('@now/node').NowResponse} res
  */
 module.exports = (req, res) => {
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200)
+    res.end()
+    return
+  }
+
   const twiml = new VoiceResponse();
   const input = req.body.SpeechResult
 
