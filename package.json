@@ -4,12 +4,15 @@
   "description": "This directory is a brief example of using a Custom Build script that can be deployed with ZEIT Now and zero configuration.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "now dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "twilio": "3.41.1"
+  },
+  "devDependencies": {
+    "now": "17.0.4"
   }
 }
