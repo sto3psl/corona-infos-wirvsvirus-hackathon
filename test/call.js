@@ -11,7 +11,8 @@ function getHook (url) {
 }
 
 function say(actor, message) {
-  return `[${actor}] ${message}
+  return `[${actor}]
+${message}
 `
 }
 
@@ -22,10 +23,14 @@ async function call () {
   while ($('Gather').attr('action')) {
     let nextAction = getHook($('Gather').attr('action'))
 
+    let texts = []
+    $('Say').each((i, elem) => {
+      texts.push($(elem).text())
+    })
     const { question } = await prompts({
       type: 'text',
       name: 'question',
-      message: say('BOT', $('Say').text())
+      message: say('BOT', texts.join('\n'))
     });
 
     response = await webhook.post(nextAction, {
