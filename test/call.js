@@ -3,7 +3,7 @@ const cheerio = require('cheerio')
 const prompts = require('prompts')
 
 const webhook = got.extend({
-  prefixUrl: 'http://localhost:3000/api'
+  prefixUrl: 'https://corona-infos.now.sh/api'
 })
 
 function getHook (url) {

@@ -15,7 +15,7 @@ module.exports = (req, res) => {
     twiml.say(voiceConfig, 'Bitte stellen Sie mir eine weitere Frage!')
     twiml.gather({
       language: voiceConfig.language,
-      action: 'https://30890a23.ngrok.io/api/respond',
+      action: 'https://corona-infos.now.sh/api/respond',
       input: 'speech'
     })
   } else if (input.toLowerCase().includes('nein')) {

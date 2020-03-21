@@ -16,7 +16,7 @@ module.exports = (req, res) => {
 
   twiml.gather({
     language: voiceConfig.language,
-    action: 'https://30890a23.ngrok.io/api/respond',
+    action: 'https://corona-infos.now.sh/api/respond',
     input: 'speech',
   })
 
