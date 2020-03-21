@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "now dev",
-    "test": "node --experimental-modules test/call.mjs"
+    "test": "node test/call.js"
   },
   "keywords": [],
   "author": "",

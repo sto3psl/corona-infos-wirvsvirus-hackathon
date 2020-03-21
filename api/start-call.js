@@ -1,5 +1,5 @@
-import twilio from 'twilio'
-import { voiceConfig } from "./_utils/config";
+const twilio = require('twilio')
+const { voiceConfig } = require('./_utils/config')
 
 const { VoiceResponse } = twilio.twiml
 
@@ -7,7 +7,7 @@ const { VoiceResponse } = twilio.twiml
  * @param {import('@now/node').NowRequest} req
  * @param {import('@now/node').NowResponse} res
  */
-export default (req, res) => {
+module.exports = (req, res) => {
   const twiml = new VoiceResponse();
 
   twiml.say(voiceConfig, 'Danke für Ihren Anruf. Ich beantworte Ihre Fragen zum Corona-Virus.');

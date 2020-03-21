@@ -1,6 +1,6 @@
-import twilio from 'twilio'
-import { voiceConfig } from "./_utils/config";
-import answersDE from "./_utils/answers.json";
+const twilio = require('twilio')
+const { voiceConfig } = require('./_utils/config')
+const answersDE = require('./_utils/answers.json')
 
 const { VoiceResponse } = twilio.twiml
 
@@ -22,7 +22,7 @@ async function findResponse (input) {
  * @param {import('@now/node').NowRequest} req
  * @param {import('@now/node').NowResponse} res
  */
-export default (req, res) => {
+module.exports = (req, res) => {
   const twiml = new VoiceResponse();
   const input = req.body.SpeechResult
   const response = await findResponse(input)

@@ -1,6 +1,6 @@
-import got from 'got'
-import cheerio from 'cheerio'
-import prompts from 'prompts'
+const got = require('got')
+const cheerio = require('cheerio')
+const prompts = require('prompts')
 
 const webhook = got.extend({
   prefixUrl: 'http://localhost:3000/api'
