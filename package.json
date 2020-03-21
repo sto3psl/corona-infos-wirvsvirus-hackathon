@@ -1,10 +1,11 @@
 {
   "name": "corona-infos",
-  "version": "1.0.0",
-  "description": "This directory is a brief example of using a Custom Build script that can be deployed with ZEIT Now and zero configuration.",
-  "main": "index.js",
+  "version": "0.0.0",
   "scripts": {
-    "start": "now dev",
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "build": "preact build",
+    "serve": "preact build && sirv build --cors --single",
+    "dev": "preact watch --no-sw",
     "test": "node test/call.js"
   },
   "keywords": [],
@@ -12,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "ibm-watson": "5.4.0",
-    "twilio": "3.41.1"
+    "twilio": "3.41.1",
+    "preact": "^10.3.4",
+    "preact-render-to-string": "^5.1.4"
   },
   "devDependencies": {
     "@now/node": "1.4.1",
@@ -21,6 +24,9 @@
     "got": "10.6.0",
     "nodemon": "2.0.2",
     "now": "17.0.4",
-    "prompts": "2.3.2"
+    "prompts": "2.3.2",
+    "if-env": "^1.0.4",
+    "preact-cli": "^3.0.0-rc.6",
+    "sirv-cli": "^0.4.5"
   }
 }
