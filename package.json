@@ -4,7 +4,8 @@
   "description": "This directory is a brief example of using a Custom Build script that can be deployed with ZEIT Now and zero configuration.",
   "main": "index.js",
   "scripts": {
-    "start": "now dev"
+    "start": "now dev",
+    "test": "node --experimental-modules test/call.mjs"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,10 @@
     "twilio": "3.41.1"
   },
   "devDependencies": {
-    "now": "17.0.4"
+    "cheerio": "1.0.0-rc.3",
+    "got": "10.6.0",
+    "nodemon": "2.0.2",
+    "now": "17.0.4",
+    "prompts": "2.3.2"
   }
 }
