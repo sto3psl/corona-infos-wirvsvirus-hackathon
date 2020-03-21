@@ -1,6 +1,6 @@
 # Corona-Information Hotline
 
-Hier entsteht im Zuge des "WirVsVirus" Hackathons ein Telefonbot den Bürger anrufen können um nach Informationen zu COVID-19 zu fragen.
+Hier entsteht im Zuge des "WirVsVirus" Hackathons ein Telefonbot den Bürger*innen anrufen können, um nach Informationen zu COVID-19 zu fragen.
 
 ## Setup
 
@@ -40,7 +40,7 @@ Damit läuft der Server und man kann es über einen `curl` Befehl testen.
 
 Ich empfehle [HTTPie](https://httpie.org) zu installieren um API Requests zu testen da es etwas nutzerfreundlicher als `curl` ist.
 
-Um dem Service eine Frage zu stellen nutzt man den `/respond` Endpoint:
+Um dem Service eine Frage zu stellen, nutzt man den `/respond` Endpoint:
 
 ```sh
 > http http://localhost:3000/api/respond SpeechResult="Wie geht es?"
