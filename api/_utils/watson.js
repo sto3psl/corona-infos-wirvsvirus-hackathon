@@ -9,26 +9,29 @@ const assistant = new AssistantV2({
   url: process.env.WATSON_ASSISTANT_URL
 })
 
-async function run () {
-  const session = await assistant.createSession({
-    assistantId: process.env.WATSON_ASSISTANT_ID
-  })
+// just for testing ;)
+if (!module.parent) {
+  async function run () {
+    const session = await assistant.createSession({
+      assistantId: process.env.WATSON_ASSISTANT_ID
+    })
 
-  const message = await assistant.message({
-    assistantId: process.env.WATSON_ASSISTANT_ID,
-    sessionId: session.result.session_id,
-    input: {
-      message_type: 'text',
-      text: 'Gibt es Corona-Fälle in Bayern?'
-    }
-  })
+    const message = await assistant.message({
+      assistantId: process.env.WATSON_ASSISTANT_ID,
+      sessionId: session.result.session_id,
+      input: {
+        message_type: 'text',
+        text: 'Gibt es Corona-Fälle in Bayern?'
+      }
+    })
 
-  console.log(message.result.output)
+    console.log(message.result.output)
 
-  await assistant.deleteSession({
-    assistantId: process.env.WATSON_ASSISTANT_ID,
-    sessionId: session.result.session_id
-  })
+    await assistant.deleteSession({
+      assistantId: process.env.WATSON_ASSISTANT_ID,
+      sessionId: session.result.session_id
+    })
+  }
+  run()
 }
 
-run()
