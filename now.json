@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "env": {
+    "WATSON_ASSISTANT_APIKEY": "@watson-assistant-api-key",
+    "WATSON_ASSISTANT_URL": "@watson-assistant-url",
+    "WATSON_ASSISTANT_ID": "@watson-assistant-id"
+  }
+}
