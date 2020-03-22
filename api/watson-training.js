@@ -14,6 +14,9 @@ module.exports = async (req, res) => {
     // eslint-disable-next-line
     .map(({ user_utterances, intent }) => ({ user_utterances, intent }))
 
-  res.writeHead(200, { 'Content-Type': 'text/csv; charset=UTF-8' })
+  res.writeHead(200, {
+    'Content-Type': 'text/csv; charset=UTF-8',
+    'Content-Disposition': 'attachment; filename="watson-intents.csv"'
+  })
   res.end(csvFormatBody(watson))
 }
