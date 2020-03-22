@@ -8,6 +8,9 @@
     "dev": "preact watch --no-sw",
     "test": "node test/call.js"
   },
+  "prettier": {
+    "semi": false
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

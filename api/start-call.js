@@ -1,5 +1,6 @@
 const twilio = require('twilio')
 const { voiceConfig } = require('./_utils/config')
+const { assistant } = require('./_utils/watson')
 
 const { VoiceResponse } = twilio.twiml
 
@@ -10,14 +11,18 @@ const { VoiceResponse } = twilio.twiml
 module.exports = (req, res) => {
   const twiml = new VoiceResponse();
 
+  const watsonSession = await assistant.createSession({
+    assistantId: process.env.WATSON_ASSISTANT_ID
+  })
+
   twiml.say(voiceConfig, 'Danke für Ihren Anruf. Ich beantworte Ihre Fragen zum Corona-Virus.');
   twiml.pause({ length: 1 });
   twiml.say(voiceConfig, 'Bitte stellen Sie mir eine Frage!');
 
   twiml.gather({
     language: voiceConfig.language,
-    action: 'https://corona-infos.now.sh/api/respond',
-    input: 'speech',
+    action: `https://corona-infos.now.sh/api/respond?session_id=${watsonSession.result.session_id}`,
+    input: 'speech'
   })
 
   res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' });

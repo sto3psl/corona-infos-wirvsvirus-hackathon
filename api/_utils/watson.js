@@ -1,17 +1,17 @@
-const AssistantV2 = require('ibm-watson/assistant/v2')
-const { IamAuthenticator } = require('ibm-watson/auth')
+const AssistantV2 = require("ibm-watson/assistant/v2")
+const { IamAuthenticator } = require("ibm-watson/auth")
 
-const assistant = exports.assistant = new AssistantV2({
-  version: '2020-02-05',
+const assistant = (exports.assistant = new AssistantV2({
+  version: "2020-02-05",
   authenticator: new IamAuthenticator({
-    apikey: process.env.WATSON_ASSISTANT_APIKEY,
+    apikey: process.env.WATSON_ASSISTANT_APIKEY
   }),
   url: process.env.WATSON_ASSISTANT_URL
-})
+}))
 
 // just for testing ;)
 if (!module.parent) {
-  async function run () {
+  async function run() {
     const session = await assistant.createSession({
       assistantId: process.env.WATSON_ASSISTANT_ID
     })
@@ -20,8 +20,8 @@ if (!module.parent) {
       assistantId: process.env.WATSON_ASSISTANT_ID,
       sessionId: session.result.session_id,
       input: {
-        message_type: 'text',
-        text: 'Gibt es Corona-Fälle in Bayern?'
+        message_type: "text",
+        text: "Gibt es Corona-Fälle in Bayern?"
       }
     })
 
@@ -34,4 +34,3 @@ if (!module.parent) {
   }
   run()
 }
-
