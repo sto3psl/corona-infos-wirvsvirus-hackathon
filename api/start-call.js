@@ -2,7 +2,7 @@ const twilio = require('twilio')
 const { voiceConfig } = require('./_utils/config')
 const { assistant } = require('./_utils/watson')
 
-const { VoiceResponse } = twilio.twiml
+const { VoiceResponse } = twilio.twiml
 
 /**
  * @param {import('@now/node').NowRequest} req

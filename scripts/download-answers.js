@@ -15,18 +15,9 @@ async function download () {
     answers[intent] = row
   }
 
-  const watson = rows
-    .filter(row => row.user_utterances && row.intent && row.type === 'statisch')
-    .map(({user_utterances, intent}) => `"${user_utterances}","${intent}"`).join('\n')
-
   await fs.writeFile(
     path.join(__dirname, '../api', '_utils/answers_de.json'),
     JSON.stringify(answers, null, 2)
-  )
-
-  await fs.writeFile(
-    path.join(__dirname, '../build', 'watson_training.csv'),
-    watson
   )
 }
 
