@@ -1,13 +1,13 @@
 {
   "Übertragungswege_Allgemein": {
-    "user_utterances": "Wie steckt man sich mit Corona an?",
+    "user_utterances": "Wie steckt man sich mit @corona-name an?",
     "answer": "Coronaviren infizieren Menschen vor allem über die Atemwege. Der wichtigste Übertragungsweg ist eine Tröpfchen-Infektion. Dabei werden die Coronaviren von infizierten Menschen über Tröpfchen in der Luft übertragen. Zum Beispiel durch Husten, Niesen oder auch Sprechen. Jemand anderes nimmt diese Tröpfchen aus der Luft auf und kann sich infizieren. Theoretisch kann es auch zu Schmierinfektionen kommen. Zum Beispiel kann ein Infizierter Viren auf eine Oberfläche übertragen. Wenn anschließend eine andere Person die belastete Oberfläche mit der Hand berührt und sich etwa an Augen, Nase oder Mund fasst, dann kann der Kontakt mit den Schleimhäuten zur Infektion führen.",
     "type": "statisch",
     "source": "Rober-Koch-Institut und Bundesinstitut für Risikobewertung",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText1\n\nhttps://www.bfr.bund.de/de/kann_das_neuartige_coronavirus_ueber_lebensmittel_und_gegenstaende_uebertragen_werden_-244062.html"
   },
   "Übertragungswege_Oberflächen": {
-    "user_utterances": "Besteht die Gefahr, sich über Lebensmittel, Oberflächen oder Gegenstände mit dem neuartigen Coronavirus anzustecken?",
+    "user_utterances": "Besteht die Gefahr, sich über Lebensmittel, Oberflächen oder Gegenstände mit dem neuartigen @corona-name anzustecken?",
     "answer": "Es gibt derzeit keine nachgewiesenen Fälle, bei denen sich Menschen das Essen kontaminierter Lebensmittel oder durch Kontakt zu virenbelasteten Gegenständen mit dem neuartigen Coronavirus infiziert haben. Infektionen über Oberflächen, die kurz zuvor mit Viren in Kontakt kamen, sind allerdings durch Schmierinfektionen prinzipiell möglich.",
     "type": "statisch",
     "source": "Bundesinstitut für Risikobewertung",
@@ -22,7 +22,7 @@
   },
   "Symptome": {
     "user_utterances": "Welche Krankheitszeichen werden ausgelöst?",
-    "answer": "Am häufigsten wird von Fieber und Husten berichtet. Die Krankheitsverläufe unterscheide sich aber stark. Es lassen sich daher keine allgemeingültigen Aussagen machen. Eine Person kann infiziert sein und keine Krankheitszeichen haben. Bei einer anderen verläuft die Krankheit schwer mit einer Lungenentzündung und möglichem Lungenversagen. Aber am häufigsten sind milde Krankheitsverläufe. Dies zeigen die in China erfassten Fälle.",
+    "answer": "Am häufigsten wird von Fieber und Husten berichtet. Die Krankheitsverläufe unterscheiden sich aber stark. Eine Person kann infiziert sein und keine Krankheitszeichen haben. Eine andere Person hat einen schweren Verlauf. Sie hat zum Beispiel eine Lungenentzündung mit möglichem Lungenversagen. Aber am häufigsten sind milde Krankheitsverläufe. Dies zeigen die in China erfassten Fälle.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung\nRobert-Kock-Institut",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html\nhttps://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText2"
@@ -35,14 +35,14 @@
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
   "Behandlung": {
-    "user_utterances": "Gibt es Medikamente, die zur Behandlung von Covid-19 eingesetzt werden können?",
+    "user_utterances": "Gibt es Medikamente, die zur Behandlung von @corona-name eingesetzt werden können?",
     "answer": "Zurzeit gibt es keine spezifische Therapie. Aber dies ist häufig auch nicht notwendig. Denn nicht alle Erkrankungen nach Infektion verlaufen schwer. Die Behandlung erfolgt durch die optimalen unterstützende nMaßnahmen.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
   "Test_Wer": {
-    "user_utterances": "Wer kann sich auf Sars-CoV-2 testen lassen?",
+    "user_utterances": "Wer kann sich auf @corona-name testen lassen?",
     "answer": "Der Hausarzt entscheidet, ob es sinnvoll ist einen Test durchzuführen. Nicht jede Person mit Grippesymptomen wird getestet. Falls Sie Kontakt zu einer infizierten Person hatten oder im Risikogebiet waren, rufen Sie bitte in Ihrer Hausarztpraxis an.",
     "type": "dynamisch",
     "source": "Bundesgesundheitsministerium",
@@ -126,7 +126,7 @@
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Quarantaene/Flyer.pdf?__blob=publicationFile"
   },
   "RisikogruppeAlter": {
-    "user_utterances": "Ich bin <Alter>. Gehöre ich zur Risikogruppe?",
+    "user_utterances": "Ich bin @sys-number. Gehöre ich zur Risikogruppe?",
     "answer": "Das Risiko einer schweren Erkrankung steigt ab 50 bis 60 Jahre mit dem Alter an. Dies zeigen die bisherigen Fälle. Ältere Menschen können nach einer Infektion schwerer erkranken. Sie haben häufig ein weniger gut reagierendes Immunsystem.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
@@ -140,17 +140,31 @@
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Risikogruppen.html"
   },
   "RisikogruppeSchwanger": {
-    "user_utterances": "Was ist über COVID-19 bei Schwangeren bekannt?",
+    "user_utterances": "Was ist über @corona-name bei Schwangeren bekannt?",
     "answer": "Schwangere gehören nicht zur Risikogruppe. Daten der Weltgesundheitsorganisation aus China zeigen dies. Sie haben kein erhöhtes Risiko für schwere Verläufe.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
     "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html?nn=13490888"
   },
   "RisikogruppeKinder": {
-    "user_utterances": "Was ist über COVID-19 bei Kindern bekannt?",
+    "user_utterances": "Was ist über @corona-name bei Kindern bekannt?",
     "answer": "Kinder haben häufig mildere Krankheitsverläufe als Erwachsene. Das zeigen die bisherigen Daten. Wie stark Kinder an der Übertragung des Coronavirus beteiligt sind, kann noch nicht beantwortet werden.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
     "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html?nn=13490888"
+  },
+  "TriggerHäuslicheGewalt": {
+    "user_utterances": "Ich habe Angst vor meinem Mann. Was mache ich?",
+    "answer": "Bitte wenden Sie sich an das Hilfetelefon \"Gewalt gegen Frauen\". Sie erreichen es unter 0800 011 6016. Da werden Sie Hilfe bekommen.",
+    "type": "statisch",
+    "source": "",
+    "source_url": ""
+  },
+  "TriggerEinsamkeit": {
+    "user_utterances": "Niemand besucht mich mehr und ich bin alleine. Wie kann ich was gegen meine Einsamkeit tun?",
+    "answer": "Bitte rufen Sie die Telefonseelsorge an. Sie erreichen diese unter 0800 111 0 111. Da können Sie über Ihre Sorgen sprechen.",
+    "type": "statisch",
+    "source": "",
+    "source_url": ""
   }
 }
