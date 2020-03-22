@@ -74,7 +74,7 @@ module.exports = async (req, res) => {
       break
 
     case 'General_Human_or_Bot':
-      twiml.say(voiceConfig, 'Ich bin ein Watson, ein Bot.')
+      twiml.say(voiceConfig, 'Ich bin Watson, ein Bot.')
       break
 
     case 'General_Positive_Feedback':
@@ -99,7 +99,8 @@ module.exports = async (req, res) => {
   twiml.gather({
     language: voiceConfig.language,
     action: `/api/respond?session_id=${sessionId}`,
-    input: 'speech'
+    input: 'speech',
+    timeout: 2
   })
 
   res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' })

@@ -22,7 +22,8 @@ module.exports = async (req, res) => {
   twiml.gather({
     language: voiceConfig.language,
     action: `/api/respond?session_id=${watsonSession.result.session_id}`,
-    input: 'speech'
+    input: 'speech',
+    timeout: 2
   })
 
   res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' })
