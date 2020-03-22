@@ -6,6 +6,7 @@ const { csvParse } = require('d3-dsv')
 const GOOGLE_SHEET = 'https://docs.google.com/spreadsheets/d/1ssWtf3cW8t1I961NwiHNADJpmwxEyZePC95qwx4G3kk/export\?format\=csv\&id\=1ssWtf3cW8t1I961NwiHNADJpmwxEyZePC95qwx4G3kk'
 
 async function download () {
+  const file = path.join(__dirname, '../api', '_utils/answers_de.json')
   const response = await got(GOOGLE_SHEET).text()
 
   const rows = csvParse(response)
@@ -16,9 +17,10 @@ async function download () {
   }
 
   await fs.writeFile(
-    path.join(__dirname, '../api', '_utils/answers_de.json'),
+    file,
     JSON.stringify(answers, null, 2)
   )
+  console.log('[DONE]', `Updated "${file}"`)
 }
 
 download()
