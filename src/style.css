@@ -26,6 +26,7 @@ button {
 	border-radius: 12px;
 	color: white;
 	width: 60%;
+	white-space: pre-wrap;
 }
 
 .BOT {
