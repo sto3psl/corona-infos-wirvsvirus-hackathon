@@ -1,8 +1,58 @@
-html, body {
-	font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
-	font-weight: 400;
+* {
+	position: relative;
 }
 
-h1 {
-	text-align: center;
+html, body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-weight: 400;
+	font-size: 16px;
+}
+
+input,
+button {
+	font-size: 1rem;
+}
+
+.conversation {
+	display: flex;
+	flex-direction: column;
+	max-width: 512px;
+	margin: 0 auto;
+}
+
+.bubble {
+	background: #ccc;
+	padding: 12px;
+	border-radius: 12px;
+	color: white;
+	width: 60%;
+}
+
+.BOT {
+	background: #555;
+}
+
+.CALLER {
+	background: #2a71db;
+	margin-left: auto;
+}
+
+form {
+	display: flex;
+}
+
+form input {
+	flex-grow: 1;
+	border-radius: 12px;
+	padding: 4px 8px;
+	border: 1px solid #ddd;
+	margin-right: 8px;
+	background: #eee;
+}
+
+form button {
+	background: #2a71db;
+	border: none;
+	color: white;
+	border-radius: 50%;
 }

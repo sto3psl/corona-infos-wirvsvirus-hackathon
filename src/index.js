@@ -1,6 +1,7 @@
 import './style';
 import XMLReader from 'xml-reader'
 import XMLQuery from 'xml-query'
+import cx from 'classnames'
 import { h } from 'preact';
 import { useReducer, useEffect } from 'preact/hooks'
 
@@ -29,7 +30,7 @@ export default function App () {
 	const [state, dispatch] = useReducer(reducer, { action: 'start-call', conversation: [] })
 
 	useEffect(async () => {
-		const response = await (await fetch(`/api/${state.action}`, {
+		const response = await (await fetch(`http://localhost:3000/api/${state.action}`, {
 			method: 'POST',
 			mode: 'cors',
 			headers: {
@@ -59,15 +60,15 @@ export default function App () {
 	}
 
 	return (
-		<div>
+		<div class='conversation'>
 			{state.conversation.map(([actor, entry], i) => {
 				return (
-					<p key={i}>{entry}</p>
+					<p key={i} class={cx('bubble', actor)}>{entry}</p>
 				)
 			})}
 			<form onSubmit={handleSubmit}>
-				<input name="question" type="text" placeholder="question" />
-				<button type="submit">Fragen</button>
+				<input name="question" type="text" placeholder="..." />
+				<button type="submit">⬆</button>
 			</form>
 		</div>
 	);

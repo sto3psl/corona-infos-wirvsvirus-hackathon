@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "classnames": "2.2.6",
     "ibm-watson": "5.4.0",
     "preact": "^10.3.4",
     "preact-render-to-string": "^5.1.4",
