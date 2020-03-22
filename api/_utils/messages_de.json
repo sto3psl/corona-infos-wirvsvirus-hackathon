@@ -1,10 +1,10 @@
 {
-  "welcome": "Danke für Ihren Anruf. Ich beantworte Ihre Fragen zum Corona-Virus.",
-  "welcome_2": "Bitte stellen Sie mir eine Frage!",
-  "General_Ending": "Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie gesund und auf Wiedersehen.",
-  "General_Greetings": "Hi!",
+  "welcome": "Vielen Dank für Ihren Anruf! Ich beantworte Ihre Fragen rund um den Coronavirus. Bitte geben Sie mir für die Antwort ein paar Sekunden, damit ich die richtige Information für Sie finden kann. Sie bekommen auf jeden Fall eine Antwort. Die Informationen kommen vom Bundesgesundheitsministerium und dem Robert-Koch-Institut.",
+  "welcome_2": "Bitte stellen Sie mir nun eine Frage!",
+  "General_Ending": "Vielen Dank für Ihre Fragen. Hoffentlich konnte ich Ihnen helfen. Bleiben Sie gesund und auf Wiederhören.",
+  "General_Greetings": "Hallo!",
   "General_Human_or_Bot": "Ich bin Watson, ein Bot.",
   "General_Positive_Feedback": "Danke, das freut micht sehr!",
   "not_found": "Leider konnte ich zu Ihrer Frage keine passende Antwort finden. Wollen Sie es noch einmal probieren?",
-  "follow_up": "Haben Sie noch weitere Fragen?"
+  "follow_up": "Haben Sie noch eine weitere Frage?"
 }
