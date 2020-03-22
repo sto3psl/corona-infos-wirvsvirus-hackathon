@@ -1,16 +1,16 @@
-const twilio = require("twilio")
-const { voiceConfig } = require("./_utils/config")
-const answersDE = require("./_utils/answers_de.json")
-const { assistant } = require("./_utils/watson")
+const twilio = require('twilio')
+const { voiceConfig } = require('./_utils/config')
+const answersDE = require('./_utils/answers_de.json')
+const { assistant } = require('./_utils/watson')
 
 const { VoiceResponse } = twilio.twiml
 
-async function getIntentFromInput(input, sessionId) {
+async function getIntentFromInput (input, sessionId) {
   const message = await assistant.message({
     assistantId: process.env.WATSON_ASSISTANT_ID,
     sessionId,
     input: {
-      message_type: "text",
+      message_type: 'text',
       text: input
     }
   })
@@ -27,8 +27,8 @@ async function getIntentFromInput(input, sessionId) {
  * @param {string} intent Caller Intent
  * @returns {Promise<string>}
  */
-async function findResponse(intent) {
-  if (!intent) return
+async function findResponse (intent) {
+  if (!intent || !answersDE[intent]) return
   return answersDE[intent].answer
 }
 
@@ -37,14 +37,14 @@ async function findResponse(intent) {
  * @param {import('@now/node').NowResponse} res
  */
 module.exports = async (req, res) => {
-  if (req.method === "OPTIONS") {
+  if (req.method === 'OPTIONS') {
     res.writeHead(200)
     res.end()
     return
   }
 
   if (!req.query.session_id) {
-    res.status(400).json({ message: "missing session_id " })
+    res.status(400).json({ message: 'missing session_id ' })
     return
   }
 
@@ -54,31 +54,31 @@ module.exports = async (req, res) => {
   const intent = await getIntentFromInput(input, sessionId)
 
   switch (intent) {
-    case "General_Ending": {
+    case 'General_Ending': {
       await assistant.deleteSession({
         sessionId: req.query.session_id,
         assistantId: process.env.WATSON_ASSISTANT_ID
       })
       twiml.say(
         voiceConfig,
-        "Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie gesund und auf Wiedersehen."
+        'Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie gesund und auf Wiedersehen.'
       )
       twiml.hangup()
-      res.writeHead(200, { "Content-Type": "text/xml; charset=UTF-8" })
+      res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' })
       res.end(twiml.toString())
       return
     }
 
-    case "General_Greetings":
-      twiml.say(voiceConfig, "Hi!")
+    case 'General_Greetings':
+      twiml.say(voiceConfig, 'Hi!')
       break
 
-    case "General_Human_or_Bot":
-      twiml.say(voiceConfig, "Ich bin ein Watson, ein Bot.")
+    case 'General_Human_or_Bot':
+      twiml.say(voiceConfig, 'Ich bin ein Watson, ein Bot.')
       break
 
-    case "General_Positive_Feedback":
-      twiml.say(voiceConfig, "Danke, das freut micht sehr!")
+    case 'General_Positive_Feedback':
+      twiml.say(voiceConfig, 'Danke, das freut micht sehr!')
       break
 
     default: {
@@ -86,12 +86,12 @@ module.exports = async (req, res) => {
       if (!input || !intent || !response) {
         twiml.say(
           voiceConfig,
-          "Leider konnte ich zu Ihrer Frage keine passende Antwort finden. Wollen Sie es noch einmal probieren?"
+          'Leider konnte ich zu Ihrer Frage keine passende Antwort finden. Wollen Sie es noch einmal probieren?'
         )
       } else {
         twiml.say(voiceConfig, response)
         twiml.pause({ length: 2 })
-        twiml.say(voiceConfig, "Haben Sie noch weitere Fragen?")
+        twiml.say(voiceConfig, 'Haben Sie noch weitere Fragen?')
       }
     }
   }
@@ -99,9 +99,9 @@ module.exports = async (req, res) => {
   twiml.gather({
     language: voiceConfig.language,
     action: `/api/respond?session_id=${sessionId}`,
-    input: "speech"
+    input: 'speech'
   })
 
-  res.writeHead(200, { "Content-Type": "text/xml; charset=UTF-8" })
+  res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' })
   res.end(twiml.toString())
 }
