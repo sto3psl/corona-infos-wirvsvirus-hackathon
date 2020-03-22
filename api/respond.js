@@ -57,7 +57,7 @@ module.exports = async (req, res) => {
   const twiml = new VoiceResponse()
   const input = req.body.SpeechResult
   const watsonOutput = await getIntentFromInput(input, sessionId)
-  const intent = watsonOutput.intents[0].intent
+  const intent = watsonOutput ? watsonOutput.intents[0].intent : null
   let responseText = null
 
   switch (intent) {
