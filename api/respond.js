@@ -30,6 +30,7 @@ async function getIntentFromInput (input, sessionId) {
  */
 async function findResponse (input, sessionId) {
   const intent = await getIntentFromInput(input, sessionId)
+  if (!intent) return
   return answersDE[intent].answer
 }
 
