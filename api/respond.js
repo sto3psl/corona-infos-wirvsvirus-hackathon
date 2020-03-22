@@ -59,6 +59,7 @@ module.exports = async (req, res) => {
   const watsonOutput = await getIntentFromInput(input, sessionId)
   const intent = watsonOutput ? watsonOutput.intents[0].intent : null
   let responseText = null
+  let askForFollowUp = false
 
   switch (intent) {
     case 'General_Ending': {
@@ -74,15 +75,15 @@ module.exports = async (req, res) => {
     }
 
     case 'General_Greetings':
-      twiml.say(voiceConfig, messagesDE[intent])
+      responseText = messagesDE[intent]
       break
 
     case 'General_Human_or_Bot':
-      twiml.say(voiceConfig, messagesDE[intent])
+      responseText = messagesDE[intent]
       break
 
     case 'General_Positive_Feedback':
-      twiml.say(voiceConfig, messagesDE[intent])
+      responseText = messagesDE[intent]
       break
 
     case 'AktuelleZahlenBundeslandGetestet': {
@@ -95,21 +96,25 @@ module.exports = async (req, res) => {
         responseText = response
           .replace('{{ZahlBundesland}}', stateData.cases)
           .replace('{{Bundesland}}', state.value)
+        askForFollowUp = true
       }
       break
     }
 
     default: {
       responseText = await findResponse(intent, sessionId)
+      askForFollowUp = true
     }
   }
 
-  if (!responseText) {
-    twiml.say(voiceConfig, messagesDE.not_found)
-  } else {
+  if (responseText) {
     twiml.say(voiceConfig, responseText)
-    twiml.pause({ length: 2 })
-    twiml.say(voiceConfig, messagesDE.follow_up)
+    if (askForFollowUp) {
+      twiml.pause({ length: 2 })
+      twiml.say(voiceConfig, messagesDE.follow_up)
+    }
+  } else {
+    twiml.say(voiceConfig, messagesDE.not_found)
   }
 
   twiml.gather({
