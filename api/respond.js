@@ -42,6 +42,12 @@ async function findResponse (input) {
  * @param {import('@now/node').NowResponse} res
  */
 module.exports = async (req, res) => {
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200)
+    res.end()
+    return
+  }
+
   const twiml = new VoiceResponse();
   const input = req.body.SpeechResult
   const response = await findResponse(input)
