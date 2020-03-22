@@ -8,16 +8,16 @@ const { VoiceResponse } = twilio.twiml
  * @param {import('@now/node').NowRequest} req
  * @param {import('@now/node').NowResponse} res
  */
-module.exports = (req, res) => {
-  const twiml = new VoiceResponse();
+module.exports = async (req, res) => {
+  const twiml = new VoiceResponse()
 
   const watsonSession = await assistant.createSession({
     assistantId: process.env.WATSON_ASSISTANT_ID
   })
 
-  twiml.say(voiceConfig, 'Danke für Ihren Anruf. Ich beantworte Ihre Fragen zum Corona-Virus.');
-  twiml.pause({ length: 1 });
-  twiml.say(voiceConfig, 'Bitte stellen Sie mir eine Frage!');
+  twiml.say(voiceConfig, 'Danke für Ihren Anruf. Ich beantworte Ihre Fragen zum Corona-Virus.')
+  twiml.pause({ length: 1 })
+  twiml.say(voiceConfig, 'Bitte stellen Sie mir eine Frage!')
 
   twiml.gather({
     language: voiceConfig.language,
@@ -25,6 +25,6 @@ module.exports = (req, res) => {
     input: 'speech'
   })
 
-  res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' });
-  res.end(twiml.toString());
+  res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' })
+  res.end(twiml.toString())
 }

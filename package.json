@@ -28,11 +28,12 @@
     "cheerio": "1.0.0-rc.3",
     "dotenv": "8.2.0",
     "got": "10.6.0",
+    "if-env": "^1.0.4",
     "nodemon": "2.0.2",
     "now": "17.0.4",
-    "prompts": "2.3.2",
-    "if-env": "^1.0.4",
     "preact-cli": "^3.0.0-rc.6",
-    "sirv-cli": "^0.4.5"
+    "prompts": "2.3.2",
+    "sirv-cli": "^0.4.5",
+    "standard": "14.3.3"
   }
 }
