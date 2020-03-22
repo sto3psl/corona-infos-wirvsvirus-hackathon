@@ -3,14 +3,14 @@ const cheerio = require('cheerio')
 const prompts = require('prompts')
 
 const webhook = got.extend({
-  prefixUrl: 'https://corona-infos.now.sh/api'
+  prefixUrl: 'http://localhost:3000/api'
 })
 
 function getHook (url) {
   return `/${url.split('/').pop()}`
 }
 
-function say(actor, message) {
+function say (actor, message) {
   return `[${actor}]
 ${message}
 `
@@ -21,9 +21,9 @@ async function call () {
   let $ = cheerio.load(response)
 
   while ($('Gather').attr('action')) {
-    let nextAction = getHook($('Gather').attr('action'))
+    const nextAction = getHook($('Gather').attr('action'))
 
-    let texts = []
+    const texts = []
     $('Say').each((i, elem) => {
       texts.push($(elem).text())
     })
@@ -31,16 +31,21 @@ async function call () {
       type: 'text',
       name: 'question',
       message: say('BOT', texts.join('\n'))
-    });
+    })
 
-    response = await webhook.post(nextAction, {
-      json: {
-        SpeechResult: question
-      }
-    }).text()
+    response = await webhook
+      .post(nextAction, {
+        json: {
+          SpeechResult: question
+        }
+      })
+      .text()
 
     $ = cheerio.load(response)
   }
 }
 
-call()
+call().catch(error => {
+  console.error(error)
+  process.exit(1)
+})

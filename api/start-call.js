@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
 
   twiml.gather({
     language: voiceConfig.language,
-    action: `https://corona-infos.now.sh/api/respond?session_id=${watsonSession.result.session_id}`,
+    action: `/api/respond?session_id=${watsonSession.result.session_id}`,
     input: 'speech'
   })
 

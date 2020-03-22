@@ -2,7 +2,7 @@
   "name": "corona-infos",
   "version": "0.0.0",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "start": "now dev",
     "build": "preact build --no-sw",
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch --no-sw",
@@ -28,8 +28,6 @@
     "cheerio": "1.0.0-rc.3",
     "dotenv": "8.2.0",
     "got": "10.6.0",
-    "if-env": "^1.0.4",
-    "nodemon": "2.0.2",
     "now": "17.0.4",
     "preact-cli": "^3.0.0-rc.6",
     "prompts": "2.3.2",

@@ -15,7 +15,12 @@ async function getIntentFromInput(input, sessionId) {
     }
   })
 
-  return message.result.output.intents[0].intent
+  console.log(message.result)
+
+  if (message.result.output.intents.length) {
+    return message.result.output.intents[0].intent
+  }
+
 }
 
 /**
@@ -63,7 +68,7 @@ module.exports = async (req, res) => {
 
   twiml.gather({
     language: voiceConfig.language,
-    action: `https://corona-infos.now.sh/api/follow-up?session_id=${sessionId}`,
+    action: `/api/follow-up?session_id=${sessionId}`,
     input: "speech",
     hints: "ja, nein"
   })

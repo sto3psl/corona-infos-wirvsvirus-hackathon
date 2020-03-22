@@ -8,7 +8,7 @@ const { VoiceResponse } = twilio.twiml
  * @param {import('@now/node').NowRequest} req
  * @param {import('@now/node').NowResponse} res
  */
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   if (req.method === "OPTIONS") {
     res.writeHead(200)
     res.end()
@@ -27,7 +27,7 @@ module.exports = (req, res) => {
     twiml.say(voiceConfig, "Bitte stellen Sie mir eine weitere Frage!")
     twiml.gather({
       language: voiceConfig.language,
-      action: `https://corona-infos.now.sh/api/respond?session_id=${req.query.session_id}`,
+      action: `/api/respond?session_id=${req.query.session_id}`,
       input: "speech"
     })
   } else if (input.toLowerCase().includes("nein")) {
@@ -35,9 +35,8 @@ module.exports = (req, res) => {
       voiceConfig,
       "Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie gesund und auf Wiedersehen."
     )
-    twiml.pause({ length: 1 })
+    await assistant.deleteSession({ sessionId: req.query.session_id })
     twiml.hangup()
-    assistant.deleteSession({ sessionId: req.query.session_id })
   }
 
   res.writeHead(200, { "Content-Type": "text/xml; charset=UTF-8" })
