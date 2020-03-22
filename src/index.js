@@ -34,16 +34,21 @@ export default function App () {
 
   useEffect(async () => {
     const response = await (
-      await fetch(`http://localhost:3000/api/${state.action}`, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          SpeechResult: state.input
-        })
-      })
+      await fetch(
+        `${
+          location.hostname === 'localhost' ? 'http://localhost:3000' : ''
+        }/api/${state.action}`,
+        {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            SpeechResult: state.input
+          })
+        }
+      )
     ).text()
     const ast = XMLReader.parseSync(response)
     const $ = XMLQuery(ast)
