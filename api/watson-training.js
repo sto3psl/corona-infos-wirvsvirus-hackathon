@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   const rows = csvParse(response)
 
   const watson = rows
-    .filter(row => row.user_utterances && row.intent && row.type === 'statisch')
+    .filter(row => row.user_utterances && row.intent && row.answer)
     // eslint-disable-next-line
     .map(({ user_utterances, intent }) => ({ user_utterances, intent }))
 

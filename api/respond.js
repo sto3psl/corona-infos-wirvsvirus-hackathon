@@ -2,10 +2,16 @@ const twilio = require('twilio')
 const { voiceConfig } = require('./_utils/config')
 const answersDE = require('./_utils/answers_de.json')
 const messagesDE = require('./_utils/messages_de.json')
+const stateCases = require('./_utils/state-cases.json')
 const { assistant } = require('./_utils/watson')
 
 const { VoiceResponse } = twilio.twiml
 
+/**
+ * @param {string} input
+ * @param {string} sessionId
+ * @returns {Promise<import('ibm-watson/assistant/v2').MessageOutput>}
+ */
 async function getIntentFromInput(input, sessionId) {
   const message = await assistant.message({
     assistantId: process.env.WATSON_ASSISTANT_ID,
@@ -16,16 +22,15 @@ async function getIntentFromInput(input, sessionId) {
     }
   })
 
-  console.log(message.result)
-
   if (message.result.output.intents.length) {
-    return message.result.output.intents[0].intent
+    return message.result.output
   }
 }
 
 /**
  * Tries to find a response for a caller's question.
  * @param {string} intent Caller Intent
+ * @returns {Promise<string | undefined>}
  */
 async function findResponse(intent) {
   if (!intent || !answersDE[intent]) return
@@ -51,7 +56,9 @@ module.exports = async (req, res) => {
   const sessionId = req.query.session_id
   const twiml = new VoiceResponse()
   const input = req.body.SpeechResult
-  const intent = await getIntentFromInput(input, sessionId)
+  const watsonOutput = await getIntentFromInput(input, sessionId)
+  const intent = watsonOutput.intents[0].intent
+  let responseText = null
 
   switch (intent) {
     case 'General_Ending': {
@@ -78,16 +85,31 @@ module.exports = async (req, res) => {
       twiml.say(voiceConfig, messagesDE[intent])
       break
 
-    default: {
-      const response = await findResponse(intent, sessionId)
-      if (!input || !intent || !response) {
-        twiml.say(voiceConfig, messagesDE.not_found)
-      } else {
-        twiml.say(voiceConfig, response)
-        twiml.pause({ length: 2 })
-        twiml.say(voiceConfig, messagesDE.follow_up)
+    case 'AktuelleZahlenBundeslandGetestet': {
+      const state = watsonOutput.entities.find(
+        entity => entity.entity === 'bundesland'
+      )
+      if (state) {
+        const stateData = stateCases[state.value]
+        const response = await findResponse(intent, sessionId)
+        responseText = response
+          .replace('{{ZahlBundesland}}', stateData.cases)
+          .replace('{{Bundesland}}', state.value)
       }
+      break
     }
+
+    default: {
+      responseText = await findResponse(intent, sessionId)
+    }
+  }
+
+  if (!responseText) {
+    twiml.say(voiceConfig, messagesDE.not_found)
+  } else {
+    twiml.say(voiceConfig, responseText)
+    twiml.pause({ length: 2 })
+    twiml.say(voiceConfig, messagesDE.follow_up)
   }
 
   twiml.gather({

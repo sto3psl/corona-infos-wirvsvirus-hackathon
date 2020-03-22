@@ -1,154 +1,161 @@
 {
   "Übertragungswege_Allgemein": {
-    "user_utterances": "Wie steckt man sich mit @corona-name an?",
-    "answer": "Coronaviren infizieren Menschen vor allem über die Atemwege. Der wichtigste Übertragungsweg ist eine Tröpfchen-Infektion. Dabei werden die Coronaviren von infizierten Menschen über Tröpfchen in der Luft übertragen. Zum Beispiel durch Husten, Niesen oder auch Sprechen. Jemand anderes nimmt diese Tröpfchen aus der Luft auf und kann sich infizieren. Theoretisch kann es auch zu Schmierinfektionen kommen. Zum Beispiel kann ein Infizierter Viren auf eine Oberfläche übertragen. Wenn anschließend eine andere Person die belastete Oberfläche mit der Hand berührt und sich etwa an Augen, Nase oder Mund fasst, dann kann der Kontakt mit den Schleimhäuten zur Infektion führen.",
+    "user_utterances": "Wie kann ich mich anstecken?",
+    "answer": "Coronaviren infizieren Menschen vor allem über die Atemwege. Diesen Übertragungsweg nennt man Tröpfchen-Infektion. Wenn jemand in der Nähe hustet, kann man sich über die Tröpfchen anstecken. Eine Schmierinfektion ist auch möglich. Das passiert, wenn jemand eine mit dem Virus belastete Oberfläche anfasst und sich danach zum Beispiel an die Nase fasst.",
     "type": "statisch",
     "source": "Rober-Koch-Institut und Bundesinstitut für Risikobewertung",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText1\n\nhttps://www.bfr.bund.de/de/kann_das_neuartige_coronavirus_ueber_lebensmittel_und_gegenstaende_uebertragen_werden_-244062.html"
   },
+  "Übertragungswege_Tröpfcheninfektion": {
+    "user_utterances": "Was versteht man unter Tröpfcheninfektion?",
+    "answer": "Bei der Tröpfchen-Infektion gelangt der Krankheitserreger über Tröpfchen an die Luft. Dies passiert zum Beispiel, wenn ein Infizierter hustet, niest oder spricht. Wenn ein anderer Mensch diese Tröpfchen einatmet, kann er sich infizieren.",
+    "type": "statisch",
+    "source": "Bundeszentrale für gesundheitliche Aufklärung",
+    "source_url": "https://www.infektionsschutz.de/infektionskrankheiten/uebertragungswege/troepfcheninfektion.html"
+  },
+  "Übertragungswege_Schmierinfektion": {
+    "user_utterances": "Was versteht man unter Schmierinfektion?",
+    "answer": "Bei der Schmierinfektion wird der Erreger über Kontakte weitergereicht. Dies passiert zum Beispiel, wenn ein Infizierter in seine Hand niest. Da bleiben Viren hängen und werden beim Händeschütteln übertragen.",
+    "type": "statisch",
+    "source": "Bundeszentrale für gesundheitliche Aufklärung",
+    "source_url": "https://www.infektionsschutz.de/infektionskrankheiten/uebertragungswege/schmierinfektion.html"
+  },
   "Übertragungswege_Oberflächen": {
-    "user_utterances": "Besteht die Gefahr, sich über Lebensmittel, Oberflächen oder Gegenstände mit dem neuartigen @corona-name anzustecken?",
-    "answer": "Es gibt derzeit keine nachgewiesenen Fälle, bei denen sich Menschen das Essen kontaminierter Lebensmittel oder durch Kontakt zu virenbelasteten Gegenständen mit dem neuartigen Coronavirus infiziert haben. Infektionen über Oberflächen, die kurz zuvor mit Viren in Kontakt kamen, sind allerdings durch Schmierinfektionen prinzipiell möglich.",
+    "user_utterances": "Wird der @corona-name über Lebensmittel/ Oberflächen/ Gegenstände übertragen?",
+    "answer": "Derzeit gibt es keinen Nachweis dafür. Trotzdem ist es möglich sich über den Kontakt zu Oberflächen zu infizieren, die kurz zuvor mit Viren in Kontakt kamen.",
     "type": "statisch",
     "source": "Bundesinstitut für Risikobewertung",
     "source_url": "https://www.bfr.bund.de/de/kann_das_neuartige_coronavirus_ueber_lebensmittel_und_gegenstaende_uebertragen_werden_-244062.html"
   },
   "Krankheitsausbruch": {
-    "user_utterances": "Wie lange dauert es, bis die Erkrankung nach Ansteckung ausbricht?",
-    "answer": "Zwischen Ansteckung und ersten Krankheitszeichen können zwischen 1 und 14 Tagen liegen. Im Durchschnitt beträgt die sogenannte Inkubationszeit 5 bis 6 Tage. Allerdings hat nicht jede infizierte Person auch Krankheitszeichen.",
+    "user_utterances": "Wie lange ist die Inkubationszeit bei einer Infektion?",
+    "answer": "Zwischen Ansteckung und ersten Krankheitszeichen können zwischen ein und 14 Tagen liegen. Im Durchschnitt beträgt die sogenannte Inkubationszeit 5 bis 6 Tage. Allerdings hat nicht jede infizierte Person auch Krankheitszeichen.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
   "Symptome": {
-    "user_utterances": "Welche Krankheitszeichen werden ausgelöst?",
+    "user_utterances": "Welche Anzeichen einer @corona-name Erkrankung gibt es?",
     "answer": "Am häufigsten wird von Fieber und Husten berichtet. Die Krankheitsverläufe unterscheiden sich aber stark. Eine Person kann infiziert sein und keine Krankheitszeichen haben. Eine andere Person hat einen schweren Verlauf. Sie hat zum Beispiel eine Lungenentzündung mit möglichem Lungenversagen. Aber am häufigsten sind milde Krankheitsverläufe. Dies zeigen die in China erfassten Fälle.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung\nRobert-Kock-Institut",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html\nhttps://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText2"
   },
   "Impfstoff": {
-    "user_utterances": "Gibt es einen Impfstoff, der vor der Erkrankung schützt?",
+    "user_utterances": "Wann ist ein Impfstoff fertig?",
     "answer": "Momentan steht kein Impfstoff zur Verfügung. Weltweit wird intensiv an der Entwicklung gearbeitet. Wann es einen Impfstoff zum Schutz vor dem neuen Coronavirus gibt, kann man noch nicht sagen.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung.",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
   "Behandlung": {
-    "user_utterances": "Gibt es Medikamente, die zur Behandlung von @corona-name eingesetzt werden können?",
-    "answer": "Zurzeit gibt es keine spezifische Therapie. Aber dies ist häufig auch nicht notwendig. Denn nicht alle Erkrankungen nach Infektion verlaufen schwer. Die Behandlung erfolgt durch die optimalen unterstützende nMaßnahmen.",
+    "user_utterances": "Ich habe gehört, es gibt keine wirksamen Arzneien. Wie werden Kranke behandelt?",
+    "answer": "Zurzeit gibt es keine spezifische Therapie. Aber dies ist häufig auch nicht notwendig. Denn nicht alle Erkrankungen nach einer Infektion verlaufen schwer. Die Behandlung erfolgt durch die optimalen unterstützenden Maßnahmen.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
+  "Test_Ort": {
+    "user_utterances": "Gibt es Teststellen für @corona-name?",
+    "answer": "Bitte informieren Sie sich zu Teststellen auf der Webseite Ihrer Stadt oder rufen Sie Ihren Hausarzt an.",
+    "type": "statisch",
+    "source": "",
+    "source_url": ""
+  },
   "Test_Wer": {
-    "user_utterances": "Wer kann sich auf @corona-name testen lassen?",
-    "answer": "Der Hausarzt entscheidet, ob es sinnvoll ist einen Test durchzuführen. Nicht jede Person mit Grippesymptomen wird getestet. Falls Sie Kontakt zu einer infizierten Person hatten oder im Risikogebiet waren, rufen Sie bitte in Ihrer Hausarztpraxis an.",
-    "type": "dynamisch",
+    "user_utterances": "Werden nur Leute getestet, die in Risikogebieten waren?",
+    "answer": "Der Hausarzt entscheidet, ob es sinnvoll ist einen Test durchzuführen. Nicht jede Person mit Grippesymptomen wird getestet, sondern zunächst Personen mit erhöhtem Risiko. Falls Sie Kontakt zu einer infizierten Person hatten oder im Risikogebiet waren, rufen Sie bitte in Ihrer Hausarztpraxis an.",
+    "type": "statisch",
     "source": "Bundesgesundheitsministerium",
     "source_url": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf"
   },
   "Test_DauerResultat": {
-    "user_utterances": "Wie lange dauert es bis die Testergebnisse zurückkommen?",
-    "answer": "Dazu gibt es keine pauschale Antwort. Bitte fragen Sie beim jeweiligen Gesundheitsamt, dass den Test bei Ihnen durchführt.",
-    "type": "",
+    "user_utterances": "Muss man lange auf sein Ergebnis warten, nachdem man auf @corona-name getestet worden ist?",
+    "answer": "Dazu gibt es keine pauschale Antwort. Bitte fragen Sie beim jeweiligen Gesundheitsamt, dass den Test bei Ihnen durchführt oder rufen Sie Ihren Hausarzt für allgemeine Fragen an.",
+    "type": "statisch",
     "source": "",
     "source_url": ""
   },
   "Test_Ressourcen": {
-    "user_utterances": "Gibt es ausreichend Tests für alle Menschen in Deutschland?",
-    "answer": "Zum aktuellen Zeitpunkt gibt es nicht Tests für alle Bürger. Deswegen werden zunächst Menschen getestet, für die ein hohes Risiko der Infektion besteht. Informieren Sie sich zum Stand der Testenwicklung in den kommenden Wochen nochmal.",
-    "type": "",
+    "user_utterances": "Gibt's schon Tests für alle?",
+    "answer": "Zum aktuellen Zeitpunkt gibt es nicht für alle Bürger Tests. Deswegen werden zunächst Menschen getestet, für die ein hohes Risiko der Infektion besteht. Informieren Sie sich zum Stand der Testentwicklung in den kommenden Wochen nochmal.",
+    "type": "statisch",
     "source": "Bundesgesundheitsministerium",
     "source_url": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf"
   },
   "Schutz_Allgemein": {
-    "user_utterances": "Was sollte die Bevölkerung tun, um die Verbreitung des Virus bestmöglich zu verlangsamen?",
-    "answer": "Sie sollten folgende Maßnahmen ergreifen, um bei der Verlangsamung der Ausbreitung zu helfen:\nWenn Sie Atemwegssymptome haben, bleiben Sie zu Hause.\nNutzen Sie öffentliche Stellen, um sich über die aktuelle Situation zu informieren, z. B. z.B. Bundesgesundheitsministerium, Robert Koch-Institut, Bundeszentrale für gesundheitliche Aufklärung.\nVerbreiten Sie keine zweifelhaften oder ungeprüften Social-Media-Informationen.\nWenn nötig, informiert das zuständige Gesundheitsamt über die Situation vor Ort.\nBefolgen Sie die Richtlinien der Behörden und der Regierung.\nReduzieren Sie ihre Kontakte zu anderen Menschen soweit wie möglich.\nWaschen Sie Ihre Hände häufig und gründlich mit Seife oder desinfizieren Sie sie.\nHusten oder Niesen Sie nur in Ihre Armbeuge, nicht in die Hand oder in die Luft. Drehen Sie sich dabei von anderen Menschen weg.\nVerzichten Sie aufs Händeschütteln und Umarmen.\nFassen Sie sich möglichst wenig ins Gesicht, damit Krankheitserreger nicht über die Schleimhäute von Augen, Nase oder Mund aufgenommen werden.\nHalten Sie Abstand von Menschen, die sichtbar an einer Atemwegserkrankung leiden.\nVermeiden Sie wenn möglich das Fahren mit den öffentlichen Verkehrsmitteln.\nArbeiten Sie von zu Hause, wenn möglich.\nBesuchen Sie keine privaten Veranstaltungen, wie zum Beispiel Geburtstagsfeiern, Spieleabende oder ähnliches.",
-    "type": "statisch",
-    "source": "Robert Koch Institut",
-    "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html"
-  },
-  "Schutz_Alltag": {
-    "user_utterances": "Welche Verhaltensempfehlungen sollten im Alltag beachtet werden?",
-    "answer": "s.o.",
-    "type": "statisch",
-    "source": "Robert Koch Institut",
-    "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html"
-  },
-  "Schutz_Miteinander": {
     "user_utterances": "Welche Verhaltensempfehlungen sollten im Miteinander beachtet werden?",
-    "answer": "s.o.",
+    "answer": "So schützen Sie sich und andere: Bleiben Sie wenn möglich zuhause. Nutzen Sie öffentliche Stellen, um sich über die aktuelle Situation zu informieren.\nBefolgen Sie die Richtlinien der Behörden und der Regierung.\nReduzieren Sie Ihre Kontakte zu anderen Menschen soweit wie möglich.\nWaschen Sie Ihre Hände häufig und gründlich mit Seife oder desinfizieren Sie sie.\nHusten oder niesen Sie nur in Ihre Armbeuge. Drehen Sie sich dabei von anderen Menschen weg.\nVerzichten Sie aufs Händeschütteln und Umarmen.\nFassen Sie sich möglichst wenig ins Gesicht.\nHalten Sie mindestens 2 Meter Abstand von anderen Menschen.\nVermeiden Sie das Fahren mit den öffentlichen Verkehrsmitteln.\nArbeiten Sie von zu Hause, wenn möglich.\nBesuchen Sie keine privaten Veranstaltungen.",
     "type": "statisch",
     "source": "Robert Koch Institut",
     "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html"
   },
   "Schutz_Maske": {
-    "user_utterances": "Ist das Tragen eines Mund-Nasen-Schutzes in der Allgemeinbevölkerung zum Schutz vor akuten Atemwegsinfektionen sinnvoll?",
-    "answer": "Es gibt keine Belege dafür, dass das Tragen einer Atemschutzmaske das Risiko einer Ansteckung verringert. Zu den wichtigsten Maßnahmen des persönlichen Schutz gehören Hust- und Niesregeln beachten, regelmäßig Händewaschen und Abstand halten. Das schützt Sie und andere! Für erkrankte Personen kann das Tragen einer Atemschutzmaske im öffentlichen Raum sinnvoll sein. Damit wird das Risiko für Fremde verringert, sich durch Tröpfchen, welche beim Husten oder Niesen entstehen, anzustecken.",
+    "user_utterances": "Schützt mich ein Atemmaske vor dem @corona-name?",
+    "answer": "Es gibt keine Belege dafür, dass das Tragen einer Atemschutzmaske das Risiko einer Ansteckung verringert. Zu den wichtigsten Maßnahmen des persönlichen Schutz gehören Hust- und Niesregeln beachten, regelmäßig Händewaschen und Abstand halten. Das schützt Sie und andere! Für erkrankte Personen kann das Tragen einer Atemschutzmaske im öffentlichen Raum trotzdem sinnvoll sein. Damit wird das Risiko für andere Menschen verringert, sich anzustecken.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
   "Quarantäne_Wer": {
-    "user_utterances": "Wer muss in Quarantäne?",
-    "answer": "Man muss in Quarantäne, wenn hohes Risiko besteht, dass man sich angesteckt hat. Hohes Risiko besteht, wenn man innerhalb der letzten zwei Wochen engen Kontakt zu einem Erkrankten hatte, der eine laborbestätigte COVID-19-Diagnose hatte. Ein enger Kontakt bedeutet, dass man mindestens 15 Minuten mit dem Erkrankten gesprochen hat oder von einem Erkrankten angehustet oder angeniest worden ist, während dieser ansteckend gewesen ist.\nAußerdem muss man immer in Quarantäne, wenn das Gesundheitsamt dies anordnet.",
+    "user_utterances": "Wer darf sein Haus/ seine Wohnung nicht mehr verlassen?",
+    "answer": "Man muss in Quarantäne, wenn ein hohes Risiko besteht, dass man sich angesteckt hat. Hohes Risiko besteht, wenn man innerhalb der letzten zwei Wochen engen persönlichen Kontakt zu einem Erkrankten hatte. Außerdem muss man immer in Quarantäne, wenn das Gesundheitsamt dies anordnet.",
     "type": "statisch",
     "source": "Robert Koch Institut",
     "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html"
   },
   "Quarantäne_Zweck": {
-    "user_utterances": "Welchen Zweck erfüllt eine Quarantäne?",
+    "user_utterances": "Wofür gibt es angeordente Quarantäne?",
     "answer": "Die Ausbreitung des neuen Coronavirus soll verlangsamt werden. Um das zu erreichen, sollen Personen, die mit dem Coronavirus infiziert sind, in häusliche Quarantäne. Dies gilt auch für Menschen, die Kontakt zu infizierten Menschen hatten. Die Gesundheitsämter können Quarantäne anordnen.",
     "type": "statisch",
     "source": "Bundeszentrale für gesundheitliche Aufklärung",
     "source_url": "https://www.infektionsschutz.de/coronavirus/faqs-coronaviruscovid-19.html"
   },
   "Quarantäne_Freiheiten": {
-    "user_utterances": "Darf man noch zum Supermarkt, wenn man in Quarantäne ist?",
-    "answer": "Nein. Während der Quarantäne dürfen Sie nicht das Haus verlassen. Lebensmittel sollten Sie sich von Nachbarn, Bekannten oder Familie vor der Haustür abstellen lassen.",
+    "user_utterances": "Darf ich noch mit dem Hund Gassi gehen, wenn ich in Quarantäne bin?",
+    "answer": "Nein. Während der Quarantäne dürfen Sie nicht das Haus verlassen. Lebensmittel sollten Sie sich von Nachbarn, Bekannten oder Familie vor der Haustür abstellen lassen. Spaziergänge sind nicht erlaubt. Den Hund ausführen auch nicht.",
     "type": "statisch",
     "source": "Robert Koch Institut",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Quarantaene/Flyer.pdf?__blob=publicationFile"
   },
   "Quarantäne_Notfall": {
-    "user_utterances": "Was soll ich tun, wenn ich in Quarantäne einen medizinischen Notfall habe?",
+    "user_utterances": "Ich habe @corona-name und aktue Atemnot. Aber ich muss in Quarantäne bleiben, was mach ich nun?",
     "answer": "Wenn Sie während der Quarantäne dringend einen Arzt benötigen, melden Sie sich bei Ihrem Hausarzt und sagen Sie, dass Sie unter Quarantäne stehen. Wenn Sie während der Quarantäne einen medizinischen Notfall haben, wählen Sie den Notruf (112) und denken Sie daran zu erwähnen, dass Sie unter Quarantäne stehen.",
-    "type": "",
-    "source": "",
-    "source_url": ""
+    "type": "statisch",
+    "source": "Robert Koch Institut",
+    "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Quarantaene/Flyer.pdf?__blob=publicationFile"
   },
   "Quarantäne_Dauer": {
-    "user_utterances": "Wie lange dauert die Quarantäne?",
-    "answer": "Wenn Quarantäne angeordnet wird, dann müssen Sie zunächst für 14 Tage zu Hause bleiben.",
+    "user_utterances": "Wie lange muss ich während der Quarantäne zu Hause bleiben?",
+    "answer": "Wenn Quarantäne angeordnet wird, müssen Sie zunächst für 14 Tage zu Hause bleiben.",
     "type": "statisch",
     "source": "Robert Koch Institut",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Quarantaene/Flyer.pdf?__blob=publicationFile"
   },
   "RisikogruppeAlter": {
-    "user_utterances": "Ich bin @sys-number. Gehöre ich zur Risikogruppe?",
-    "answer": "Das Risiko einer schweren Erkrankung steigt ab 50 bis 60 Jahre mit dem Alter an. Dies zeigen die bisherigen Fälle. Ältere Menschen können nach einer Infektion schwerer erkranken. Sie haben häufig ein weniger gut reagierendes Immunsystem.",
+    "user_utterances": "Welche Altersgruppe ist von @corona-name besonders betroffen?",
+    "answer": "Das Risiko einer schweren Erkrankung steigt ab 50 bis 60 Jahre mit dem Alter an. Dies zeigen die bisherigen Fälle. Ältere Menschen können nach einer Infektion häufig schwerer erkranken und sollten daher besonders vorsichtig sein.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Risikogruppen.html"
   },
   "RisikogruppeVorerkrankt": {
-    "user_utterances": "Hab ich mit <VORERKRANKUNG> ein höheres Risiko zu erkranken?",
-    "answer": "Manche Vorerkrankungen erhöhen das Risiko für einen schweren Krankheitsverlauf. Dies ist unabhängig vom Alter. Dazu gehören Grunderkrankungen wie zum Beispiel Herzkreislauferkrankungen, Diabetes und Erkrankungen der Atmungssystems.",
+    "user_utterances": "Welche <VORERKRANKUNG> gehören zur Risikogruppe?",
+    "answer": "Manche Vorerkrankungen erhöhen das Risiko für einen schweren Krankheitsverlauf. Dies ist unabhängig vom Alter. Dazu gehören Grunderkrankungen wie zum Beispiel Herzkreislauferkrankungen, Diabetes und Erkrankungen des Atmungssystems. Wenn Sie eine Grunderkrankung haben, informieren Sie sich bitte bei Ihrem Hausarzt.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Risikogruppen.html"
   },
   "RisikogruppeSchwanger": {
-    "user_utterances": "Was ist über @corona-name bei Schwangeren bekannt?",
-    "answer": "Schwangere gehören nicht zur Risikogruppe. Daten der Weltgesundheitsorganisation aus China zeigen dies. Sie haben kein erhöhtes Risiko für schwere Verläufe.",
+    "user_utterances": "Gehören Schwangere zur Risikogruppe?",
+    "answer": "Schwangere gehören nicht zur Risikogruppe. Daten aus China zeigen dies. Sie haben kein erhöhtes Risiko für schwere Verläufe.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
     "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html?nn=13490888"
   },
   "RisikogruppeKinder": {
-    "user_utterances": "Was ist über @corona-name bei Kindern bekannt?",
-    "answer": "Kinder haben häufig mildere Krankheitsverläufe als Erwachsene. Das zeigen die bisherigen Daten. Wie stark Kinder an der Übertragung des Coronavirus beteiligt sind, kann noch nicht beantwortet werden.",
+    "user_utterances": "Ich habe einen 3-Jährigen. Ist er besonders gefährdet?",
+    "answer": "Kinder haben häufig mildere Krankheitsverläufe als Erwachsene. Das zeigen die bisherigen Daten. Wie stark Kinder an der Verbreitung des Coronavirus beteiligt sind, kann noch nicht beantwortet werden.",
     "type": "statisch",
     "source": "Robert-Koch-Institut",
     "source_url": "https://www.rki.de/SharedDocs/FAQ/NCOV2019/FAQ_Liste.html?nn=13490888"
@@ -164,6 +171,13 @@
     "user_utterances": "Niemand besucht mich mehr und ich bin alleine. Wie kann ich was gegen meine Einsamkeit tun?",
     "answer": "Bitte rufen Sie die Telefonseelsorge an. Sie erreichen diese unter 0800 111 0 111. Da können Sie über Ihre Sorgen sprechen.",
     "type": "statisch",
+    "source": "",
+    "source_url": ""
+  },
+  "AktuelleZahlenBundeslandGetestet": {
+    "user_utterances": "Können Sie mir die aktuelle Anzahl positiv Getesteter für @bundesland nennen?",
+    "answer": "Für den 22. März 2020 gibt es {{ZahlBundesland}} Menschen in {{Bundesland}}, die bislang positiv auf den neuartigen Coronavirus getestet worden sind.",
+    "type": "dynamisch",
     "source": "",
     "source_url": ""
   }

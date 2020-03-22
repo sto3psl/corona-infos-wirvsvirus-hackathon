@@ -12,7 +12,7 @@ async function download () {
   const rows = csvParse(response)
 
   const answers = {}
-  for (const {intent, ...row} of rows.filter(row => row.answer)) {
+  for (const { intent, ...row } of rows.filter(row => row.answer)) {
     answers[intent] = row
   }
 
