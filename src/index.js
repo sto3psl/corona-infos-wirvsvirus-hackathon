@@ -65,10 +65,12 @@ export default function App () {
   }, [state.input])
 
   useLayoutEffect(() => {
-    window.scrollTo({
-      top: document.body.getBoundingClientRect().height,
-      behavior: 'smooth'
-    })
+    if (state.conversation.length > 4) {
+      window.scrollTo({
+        top: document.body.getBoundingClientRect().height,
+        behavior: 'smooth'
+      })
+    }
   }, [state.conversation.length])
 
   function handleSubmit (e) {
@@ -79,18 +81,66 @@ export default function App () {
   }
 
   return (
-    <div class='conversation'>
-      {state.conversation.map(([actor, entry], i) => {
-        return (
-          <p key={i} class={cx('bubble', actor)}>
-            {entry}
-          </p>
-        )
-      })}
-      <form onSubmit={handleSubmit}>
-        <input name='question' type='text' placeholder='...' />
-        <button type='submit'>⬆</button>
-      </form>
+    <div class='container'>
+      <aside>
+        <h1>Corona-Infos mit Twilio</h1>
+        <h2>#WirVsVirus - Hackathon der Bundesregierung</h2>
+        <p>
+          <ul>
+            <li>
+              <a href='https://devpost.com/software/176_virtueller_telefonassistent_coronainfosmittwilio'>
+                DevPost
+              </a>
+            </li>
+            <li>
+              <a href='https://github.com/sto3psl/corona-infos-wirvsvirus-hackathon'>
+                Github Repository
+              </a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Telefonnummer: <a href='tel:+12062220586'>+1 (206) 222 0586</a>
+        </p>
+        <p>
+          <i>
+            Dies ist eine temporäre US-Amerikanische Telefonnummer. Bei einem
+            Anruf kommen eventuell hohe Kosten auf Sie zu. Ein Anruf über den
+            Service <b>Skype</b> ist kostenlos.
+          </i>
+        </p>
+        <p>
+          Ziel unseres Projektes ist es, das Informationsbedürfnis rund um den
+          Coronavirus der Bürger*innen schnell mit verlässlichen und aktuellen
+          Antworten zufrieden zustellen. Dabei steht die Entlastung der
+          öffentlichen Hotlines im Vordergrund und es wurde ein Telefonbot
+          entwickelt: Anrufer*innen bekommen mit Hilfe eines Telefonbots
+          verlässliche und aktuelle Informationen rund um die Fragen zu
+          Corona-Virus, Sars-CoV-2 und Covid-19. Die anrufende Person stellt
+          eine Frage. Aus der Frage wird die Intention identifiziert. Auf diese
+          Intention wird eine passende Antwort gefunden und dem*r Nutzer*in von
+          dem Telefonbot vorgesprochen. Weitere Fragen sind möglich.
+        </p>
+        <p>
+          Durch die Nutzung eines Telefonbots können die Hotlines des
+          Gesundheitsministeriums sowie der Gesundheitsämter entlastet werden.
+          Zudem bietet es insbesondere Menschen ohne Internetanschluss einen
+          Zugang zu Informationen.
+        </p>
+      </aside>
+      <main class='conversation'>
+        {state.conversation.map(([actor, entry], i) => {
+          return (
+            <p key={i} class={cx('bubble', actor)}>
+              {entry}
+            </p>
+          )
+        })}
+        <form onSubmit={handleSubmit}>
+          <input name='question' type='text' placeholder='...' />
+          <button type='submit'>⬆</button>
+        </form>
+      </main>
     </div>
   )
 }

@@ -6,7 +6,13 @@ html, body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-weight: 400;
 	font-size: 16px;
+	line-height: 1.2;
 	margin: 0;
+}
+
+h2 {
+	font-size: 1.1rem;
+	font-weight: 600;
 }
 
 body {
@@ -18,11 +24,22 @@ button {
 	font-size: 1rem;
 }
 
+.container {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+aside {
+	padding: 8px;
+}
+
 .conversation {
+	width: 100%;
+	--width: 100%;
 	display: flex;
 	flex-direction: column;
-	max-width: 512px;
-	margin: 0 auto;
+	max-width: var(--width);
 	padding: 8px;
 }
 
@@ -46,7 +63,7 @@ button {
 
 form {
 	width: calc(100% - 16px);
-	max-width: 496px;
+	max-width: calc(var(--width) - 16px);
 	display: flex;
 	position: fixed;
 	bottom: 0;
@@ -68,4 +85,18 @@ form button {
 	border: none;
 	color: white;
 	border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+	.container {
+		flex-direction: row;
+	}
+
+	aside {
+		max-width: 450px;
+	}
+
+	.conversation {
+		--width: 438px;
+	}
 }
