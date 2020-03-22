@@ -71,7 +71,7 @@
   },
   "Test_DauerResultat": {
     "user_utterances": "Muss man lange auf sein Ergebnis warten, nachdem man auf @corona-name getestet worden ist?",
-    "answer": "Dazu gibt es keine pauschale Antwort. Bitte fragen Sie beim jeweiligen Gesundheitsamt, dass den Test bei Ihnen durchführt oder rufen Sie Ihren Hausarzt für allgemeine Fragen an.",
+    "answer": "Dazu gibt es keine pauschale Antwort. Bitte fragen Sie beim jeweiligen Gesundheitsamt, das den Test bei Ihnen durchführt oder rufen Sie Ihren Hausarzt für allgemeine Fragen an.",
     "type": "statisch",
     "source": "",
     "source_url": ""
@@ -120,7 +120,7 @@
   },
   "Quarantäne_Notfall": {
     "user_utterances": "Ich habe @corona-name und aktue Atemnot. Aber ich muss in Quarantäne bleiben, was mach ich nun?",
-    "answer": "Wenn Sie während der Quarantäne dringend einen Arzt benötigen, melden Sie sich bei Ihrem Hausarzt und sagen Sie, dass Sie unter Quarantäne stehen. Wenn Sie während der Quarantäne einen medizinischen Notfall haben, wählen Sie den Notruf (112) und denken Sie daran zu erwähnen, dass Sie unter Quarantäne stehen.",
+    "answer": "Wenn Sie während der Quarantäne dringend einen Arzt benötigen, melden Sie sich bei Ihrem Hausarzt und sagen Sie, dass Sie unter Quarantäne stehen. Wenn Sie während der Quarantäne einen medizinischen Notfall haben, wählen Sie den Notruf (112). Denken Sie daran zu erwähnen, dass Sie unter Quarantäne stehen.",
     "type": "statisch",
     "source": "Robert Koch Institut",
     "source_url": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Quarantaene/Flyer.pdf?__blob=publicationFile"
