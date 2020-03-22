@@ -6,6 +6,11 @@ html, body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-weight: 400;
 	font-size: 16px;
+	margin: 0;
+}
+
+body {
+	padding-bottom: 50px;
 }
 
 input,
@@ -18,6 +23,7 @@ button {
 	flex-direction: column;
 	max-width: 512px;
 	margin: 0 auto;
+	padding: 8px;
 }
 
 .bubble {
@@ -39,7 +45,13 @@ button {
 }
 
 form {
+	width: calc(100% - 16px);
+	max-width: 496px;
 	display: flex;
+	position: fixed;
+	bottom: 0;
+	padding: 12px 0;
+	background: white;
 }
 
 form input {
