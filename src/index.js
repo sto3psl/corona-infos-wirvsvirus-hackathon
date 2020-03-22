@@ -30,7 +30,7 @@ export default function App () {
 	const [state, dispatch] = useReducer(reducer, { action: 'start-call', conversation: [] })
 
 	useEffect(async () => {
-		const response = await (await fetch(`http://localhost:3000/api/${state.action}`, {
+		const response = await (await fetch(`/api/${state.action}`, {
 			method: 'POST',
 			mode: 'cors',
 			headers: {
