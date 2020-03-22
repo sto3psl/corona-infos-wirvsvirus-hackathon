@@ -1,0 +1,18 @@
+{
+  "Baden-Württemberg": { "cases": 3807, "deaths": 21 },
+  "Bayern": { "cases": 3650, "deaths": 21 },
+  "Nordrhein-Westfalen": { "cases": 3545, "deaths": 6 },
+  "Niedersachsen": { "cases": 1306, "deaths": 1 },
+  "Hessen": { "cases": 1175, "deaths": 2 },
+  "Rheinland-Pfalz": { "cases": 1053, "deaths": 2 },
+  "Berlin": { "cases": 1024, "deaths": 1 },
+  "Hamburg": { "cases": 872, "deaths": 0 },
+  "Sachsen": { "cases": 606, "deaths": 0 },
+  "Schleswig-Holstein": { "cases": 347, "deaths": 1 },
+  "Brandenburg": { "cases": 274, "deaths": 0 },
+  "Thüringen": { "cases": 216, "deaths": 0 },
+  "Sachsen-Anhalt": { "cases": 211, "deaths": 0 },
+  "Saarland": { "cases": 187, "deaths": 0 },
+  "Mecklenburg-Vorpommern": { "cases": 172, "deaths": 0 },
+  "Bremen": { "cases": 165, "deaths": 0 }
+}
