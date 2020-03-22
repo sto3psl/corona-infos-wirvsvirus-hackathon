@@ -6,7 +6,8 @@
     "build": "preact build --no-sw && node scripts/download-answers.js",
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch --no-sw",
-    "test": "node test/call.js"
+    "test": "node test/call.js",
+    "postinstall": "node scripts/download-answers.js"
   },
   "prettier": {
     "semi": false
