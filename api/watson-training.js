@@ -1,5 +1,5 @@
 const got = require('got')
-const { csvParse, csvFormat } = require('d3-dsv')
+const { csvParse, csvFormatBody } = require('d3-dsv')
 
 const GOOGLE_SHEET =
   'https://docs.google.com/spreadsheets/d/1ssWtf3cW8t1I961NwiHNADJpmwxEyZePC95qwx4G3kk/export?format=csv&id=1ssWtf3cW8t1I961NwiHNADJpmwxEyZePC95qwx4G3kk'
@@ -15,5 +15,5 @@ module.exports = async (req, res) => {
     .map(({ user_utterances, intent }) => ({ user_utterances, intent }))
 
   res.writeHead(200, { 'Content-Type': 'text/csv; charset=UTF-8' })
-  res.end(csvFormat(watson))
+  res.end(csvFormatBody(watson))
 }
