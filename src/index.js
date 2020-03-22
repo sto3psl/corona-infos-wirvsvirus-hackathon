@@ -88,19 +88,19 @@ export default function App () {
         <p>
           <ul>
             <li>
-              <a native href='https://devpost.com/software/176_virtueller_telefonassistent_coronainfosmittwilio'>
+              <a href='https://devpost.com/software/176_virtueller_telefonassistent_coronainfosmittwilio'>
                 DevPost
               </a>
             </li>
             <li>
-              <a native href='https://github.com/sto3psl/corona-infos-wirvsvirus-hackathon'>
+              <a href='https://github.com/sto3psl/corona-infos-wirvsvirus-hackathon'>
                 Github Repository
               </a>
             </li>
           </ul>
         </p>
         <p>
-          Telefonnummer: <a native href='tel:+12062220586'>+1 (206) 222 0586</a>
+          Telefonnummer: <a href='tel:+12062220586'>+1 (206) 222 0586</a>
         </p>
         <p>
           <i>

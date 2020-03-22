@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "now dev",
-    "build": "preact build --no-sw && node scripts/download-answers.js",
+    "build": "preact build --no-sw --no-prerender && node scripts/download-answers.js",
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch --no-sw",
     "test": "node test/call.js",
