@@ -24,7 +24,6 @@ async function getIntentFromInput (input) {
     sessionId: session.result.session_id
   })
 
-  console.log('out', message.result)
   return  message.result.output.intents[0].intent
 }
 
