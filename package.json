@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "now dev",
-    "build": "preact build --no-sw",
+    "build": "preact build --no-sw && node scripts/download-answers.js",
     "serve": "preact build && sirv build --cors --single",
     "dev": "preact watch --no-sw",
     "test": "node test/call.js"
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@now/node": "1.4.1",
     "cheerio": "1.0.0-rc.3",
+    "d3-dsv": "1.2.0",
     "dotenv": "8.2.0",
     "got": "10.6.0",
     "now": "17.0.4",
