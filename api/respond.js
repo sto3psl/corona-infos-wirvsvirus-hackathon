@@ -1,11 +1,12 @@
 const twilio = require('twilio')
 const { voiceConfig } = require('./_utils/config')
 const answersDE = require('./_utils/answers_de.json')
+const messagesDE = require('./_utils/messages_de.json')
 const { assistant } = require('./_utils/watson')
 
 const { VoiceResponse } = twilio.twiml
 
-async function getIntentFromInput (input, sessionId) {
+async function getIntentFromInput(input, sessionId) {
   const message = await assistant.message({
     assistantId: process.env.WATSON_ASSISTANT_ID,
     sessionId,
@@ -25,9 +26,8 @@ async function getIntentFromInput (input, sessionId) {
 /**
  * Tries to find a response for a caller's question.
  * @param {string} intent Caller Intent
- * @returns {Promise<string>}
  */
-async function findResponse (intent) {
+async function findResponse(intent) {
   if (!intent || !answersDE[intent]) return
   return answersDE[intent].answer
 }
@@ -59,10 +59,7 @@ module.exports = async (req, res) => {
         sessionId: req.query.session_id,
         assistantId: process.env.WATSON_ASSISTANT_ID
       })
-      twiml.say(
-        voiceConfig,
-        'Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie gesund und auf Wiedersehen.'
-      )
+      twiml.say(voiceConfig, messagesDE[intent])
       twiml.hangup()
       res.writeHead(200, { 'Content-Type': 'text/xml; charset=UTF-8' })
       res.end(twiml.toString())
@@ -70,28 +67,25 @@ module.exports = async (req, res) => {
     }
 
     case 'General_Greetings':
-      twiml.say(voiceConfig, 'Hi!')
+      twiml.say(voiceConfig, messagesDE[intent])
       break
 
     case 'General_Human_or_Bot':
-      twiml.say(voiceConfig, 'Ich bin Watson, ein Bot.')
+      twiml.say(voiceConfig, messagesDE[intent])
       break
 
     case 'General_Positive_Feedback':
-      twiml.say(voiceConfig, 'Danke, das freut micht sehr!')
+      twiml.say(voiceConfig, messagesDE[intent])
       break
 
     default: {
       const response = await findResponse(intent, sessionId)
       if (!input || !intent || !response) {
-        twiml.say(
-          voiceConfig,
-          'Leider konnte ich zu Ihrer Frage keine passende Antwort finden. Wollen Sie es noch einmal probieren?'
-        )
+        twiml.say(voiceConfig, messagesDE.not_found)
       } else {
         twiml.say(voiceConfig, response)
         twiml.pause({ length: 2 })
-        twiml.say(voiceConfig, 'Haben Sie noch weitere Fragen?')
+        twiml.say(voiceConfig, messagesDE.follow_up)
       }
     }
   }

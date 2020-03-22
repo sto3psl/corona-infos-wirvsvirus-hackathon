@@ -10,7 +10,8 @@
     "postinstall": "node scripts/download-answers.js"
   },
   "prettier": {
-    "semi": false
+    "semi": false,
+    "singleQuote": true
   },
   "keywords": [],
   "author": "",

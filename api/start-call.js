@@ -1,6 +1,7 @@
 const twilio = require('twilio')
 const { voiceConfig } = require('./_utils/config')
 const { assistant } = require('./_utils/watson')
+const messagesDE = require('./_utils/messages_de.json')
 
 const { VoiceResponse } = twilio.twiml
 
@@ -15,9 +16,9 @@ module.exports = async (req, res) => {
     assistantId: process.env.WATSON_ASSISTANT_ID
   })
 
-  twiml.say(voiceConfig, 'Danke für Ihren Anruf. Ich beantworte Ihre Fragen zum Corona-Virus.')
+  twiml.say(voiceConfig, messagesDE.welcome)
   twiml.pause({ length: 1 })
-  twiml.say(voiceConfig, 'Bitte stellen Sie mir eine Frage!')
+  twiml.say(voiceConfig, messagesDE.welcome_2)
 
   twiml.gather({
     language: voiceConfig.language,
