@@ -19,7 +19,7 @@ module.exports = (req, res) => {
       input: 'speech'
     })
   } else if (input.toLowerCase().includes('nein')) {
-    twiml.say(voiceConfig, 'Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie Gesund und auf wiedersehen.')
+    twiml.say(voiceConfig, 'Vielen Dank. Ich hoffe, dass ich Ihnen helfen konnte. Bleiben Sie gesund und auf Wiedersehen.')
     twiml.pause({ length: 1 })
     twiml.hangup()
   }
