@@ -1,15 +1,12 @@
-# Corona-Information Hotline
+# Corona Infos mit Twilio
 
 Hier entsteht im Zuge des "WirVsVirus" Hackathons ein Telefonbot den Bürger*innen anrufen können, um nach Informationen zu COVID-19 zu fragen.
 
 ## Setup
 
-Ihr benötigt [Node.js](https://nodejs.org) und `npm` (ist in Node.js enthalten). Außerdem sollte [`ngrok`](https://ngrok.com) installiert sein.
+Ihr benötigt [Node.js](https://nodejs.org) und `npm` (ist in Node.js enthalten).
 
 ```sh
-# Installiere ngrok mit brew
-> brew cask install ngrok
-
 # Repository klonen
 > git clone https://github.com/sto3psl/corona-infos-wirvsvirus-hackathon corona-infos
 
@@ -20,7 +17,7 @@ Ihr benötigt [Node.js](https://nodejs.org) und `npm` (ist in Node.js enthalten)
 > npm install
 ```
 
-Mit diesen Befehlen solltest du ein korrektes Setup haben.
+Mit diesen Befehlen solltest du ein funktionierendes Setup haben.
 
 ## Development
 
@@ -53,11 +50,11 @@ Um dem Service eine Frage zu stellen, nutzt man den `/respond` Endpoint:
 </Response>
 ```
 
-Aktuell wird nur die Frage wieder zurückgegeben in Kombination mit einem `Auf Wiedersehen`. So funktioniert auch Twilio indem es zu bestimmten Zeiten im Call diese API Endpoints aufruft.
-
 Den Code findet ihr im `/api` Ordner.
 
 ## Nützliche Links
 
 * [Twilio Docs](https://www.twilio.com/docs/api)
 * [Zeit Now (hosting)](https://zeit.co/home)
+* [DevPost](https://devpost.com/software/176_virtueller_telefonassistent_coronainfosmittwilio)
+* [WirVsVirus Hackathon](https://wirvsvirushackathon.org)
